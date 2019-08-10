@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using SerwisInstaller.Logs;
 using SerwisInstaller.Configuration;
 using SerwisInstaller.Main;
 using System.DirectoryServices;
@@ -18,9 +20,7 @@ namespace SerwisInstaller.ActiveDirectory
         }
         public void ShowUser()
         {
-            Console.WriteLine("---------------------------------");
-            Console.WriteLine("Windows Account creator");
-            Console.WriteLine("---------------------------------");
+            LogWriter.LogWrite("Tworzenie konta użytkownika");
             CreateUser(LocalParameters.username, LocalParameters.password); // Przekazuje dane do metody
         }
         public void CreateUser(string name, string pass)
@@ -31,7 +31,7 @@ namespace SerwisInstaller.ActiveDirectory
                 DirectoryEntry newUser = AD.Children.Add(name, "user"); // Dodaje potomka do active directory o nazwie name => name zwrocony z metody w WPF
                 newUser.Invoke("SetPassword", new object[] { pass }); // wywołuje hasło i dodaje je do kontenera jako "(String = pass) => password zwrocony przez metode w WPF"
                 newUser.CommitChanges(); // Wykonuje zmianę
-                Console.WriteLine("Nazwa utworzonego konta:{0}", newUser.Name.ToString());
+                LogWriter.LogWrite($"Nazwa utworzonego konta:{newUser.Name.ToString()}");
                 DirectoryEntry group; // tworzy kolejną scieżkę zmienną AD
                 if (option == 1)
                 {
@@ -51,13 +51,12 @@ namespace SerwisInstaller.ActiveDirectory
                 }
                 AD.Close();
                 newUser.Close(); // Zamyka strumień
-                Console.WriteLine("Konto utworzone prawidłowo.");
-                Console.WriteLine("-----------------------------");
+                LogWriter.LogWrite("Konto utworzone prawidłowo.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                Console.ReadKey();
+                MessageBox.Show(ex.ToString());
+                LogWriter.LogWrite(ex.ToString());
             }
         }
     }

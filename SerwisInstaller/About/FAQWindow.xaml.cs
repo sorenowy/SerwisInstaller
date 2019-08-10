@@ -13,28 +13,25 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using SerwisInstaller.Configuration;
 
-namespace SerwisInstaller.ActiveDirectory
+namespace SerwisInstaller.About
 {
     /// <summary>
-    /// Interaction logic for NetbiosMenu.xaml
+    /// Interaction logic for FAQWindow.xaml
     /// </summary>
-    public partial class NetbiosMenu : Window
+    public partial class FAQWindow : Window
     {
-        private MainWindow _window = null;
-        public NetbiosMenu()
+        private MainWindow _window = MenuParameters.mainWindow;
+        public FAQWindow()
         {
             InitializeComponent();
         }
-        public NetbiosMenu(MainWindow window)
+        public FAQWindow(MainWindow window)
         {
             InitializeComponent();
             _window = window;
         }
-        private void buttonNetbiosOK_Click(object sender, RoutedEventArgs e)
+        private void buttonFAQExit_Click(object sender, RoutedEventArgs e)
         {
-            NetBIOSChange netbios = new NetBIOSChange();
-            LocalParameters.netBIOSname = textboxNetbios.Text;
-            netbios.ChangeNetBIOS();
             this.Close();
         }
     }

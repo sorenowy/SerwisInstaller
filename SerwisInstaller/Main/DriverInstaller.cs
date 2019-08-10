@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using SerwisInstaller.Logs;
 using System.IO;
 using SerwisInstaller.Configuration;
 
@@ -37,14 +39,14 @@ namespace SerwisInstaller.Main
                 this.StartInfo.FileName = @"C:\Windows\System32\cmd.exe";
                 this.StartInfo.Arguments = @"/c C:\Windows\sysnative\pnputil.exe /i /a C:\Data\64\ezusb.inf"; // wywołanie metody z argumentem w CMD
                 this.Start();
-                Console.WriteLine(this.StandardOutput.ReadToEnd());
                 this.StandardOutput.Close();
                 this.WaitForExit();
-                Console.WriteLine("Sterownik EZPU100 do czytnika kart został zainstalowany.");
+                LogWriter.LogWrite("Sterownik EZPU100 do czytnika kart został zainstalowany.");
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                MessageBox.Show(e.Message);
+                LogWriter.LogWrite(e.ToString());
             }
         }
     }

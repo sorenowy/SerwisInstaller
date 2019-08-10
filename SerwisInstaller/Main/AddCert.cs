@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Security.Cryptography.X509Certificates;
 using SerwisInstaller.Configuration;
+using SerwisInstaller.Logs;
 
 namespace SerwisInstaller.Main
 {
@@ -27,16 +29,13 @@ namespace SerwisInstaller.Main
                 store.Open(OpenFlags.ReadWrite); //Otwiera magazyn i zezwala na zapis/odczyt
                 store.Add(certificateCWI); // dodaje ceryfikat
                 store.Close();
-                Console.WriteLine("Certyfikat CWI_CERT dograny pomyślnie!");
+                LogWriter.LogWrite("Certyfikat CWI_CERT dograny pomyślnie!");
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Console.WriteLine("Błąd dogrywania certyfikatu CWI_CERT");
-            }
-            finally
-            {
-                Console.WriteLine("-------------------------------");
+                MessageBox.Show("Błąd dogrywania certyfikatu CWI_CERT");
+                LogWriter.LogWrite(e.ToString());
             }
         }
         public void InstallInfrastrukturaCert(string filename)
@@ -49,15 +48,12 @@ namespace SerwisInstaller.Main
                 store.Open(OpenFlags.ReadWrite);
                 store.Add(certificatePSTD);
                 store.Close();
-                Console.WriteLine("Certyfikat infrastruktura dodano pomyślnie!");
+                LogWriter.LogWrite("Certyfikat infrastruktura dodano pomyślnie!");
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Console.WriteLine("Bład dogrania cert. Infrastruktura2019!");
-            }
-            finally
-            {
-                Console.WriteLine("---------------------------------");
+                MessageBox.Show("Bład dogrania cert. Infrastruktura2019!");
+                LogWriter.LogWrite(e.ToString());
             }
         }
     }

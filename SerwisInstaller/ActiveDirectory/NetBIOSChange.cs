@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using SerwisInstaller.Main;
 using SerwisInstaller.Configuration;
+using SerwisInstaller.Logs;
 
 namespace SerwisInstaller.ActiveDirectory
 {
@@ -30,15 +32,12 @@ namespace SerwisInstaller.ActiveDirectory
                 this.StartInfo.Arguments = "/c wmic computersystem where caption='" + Environment.MachineName + "' rename " + LocalParameters.netBIOSname;
                 this.Start();
                 this.WaitForExit();
-                Console.WriteLine("Zmiana nazwy NetBIOS wykonana pomyślnie!");
+                LogWriter.LogWrite("Zmiana nazwy NetBIOS wykonana pomyślnie!");
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                Console.WriteLine("------------------------------");
+                MessageBox.Show(e.Message);
+                LogWriter.LogWrite(e.ToString());
             }
         }
         public void JoinDomain()
@@ -49,15 +48,11 @@ namespace SerwisInstaller.ActiveDirectory
                 this.StartInfo.Arguments = "add-computer -domainname kwp-gorzow.intranet";
                 this.Start();
                 this.WaitForExit();
-                Console.WriteLine("Udało się podłączyć do domeny.");
+                LogWriter.LogWrite("Udało się podłączyć do domeny.");
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
-            }
-            finally
-            {
-                Console.WriteLine("------------------------------");
+                LogWriter.LogWrite(e.ToString());
             }
         }
     }

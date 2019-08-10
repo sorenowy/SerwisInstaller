@@ -6,6 +6,7 @@ using System.IO;
 using System.Windows;
 using SerwisInstaller.Configuration;
 using SerwisInstaller.Main;
+using SerwisInstaller.Logs;
 
 namespace SerwisInstaller.Policy
 {
@@ -38,16 +39,16 @@ namespace SerwisInstaller.Policy
                 this.StartInfo.FileName = @"C:\Windows\System32\cmd.exe";
                 this.StartInfo.Arguments = @"/c Secedit /configure /db secedit.sdb /cfg C:\Data\polityka\politykabezp.inf"; // Wywołanie komendy
                 this.Start();
-                Console.WriteLine(this.StandardOutput.ReadToEnd());
                 this.StandardOutput.Close();
                 this.WaitForExit();
                 /* this.StartInfo.FileName = @"C:\Windows\System32\cmd.exe";
                 this.StartInfo.Arguments = @"/c Secedit /refreshpolicy machine_policy /enforce /quiet"; */ // Można wykonać załadowanie automatyczne polityki bez restartowania komputera tym poleceniem!
+                LogWriter.LogWrite("Zainstalowano politykę bezpieczeństwa.");
                 MessageBox.Show("Polityka bezpieczeństwa została zainstalowana.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                LogWriter.LogWrite(e.ToString());
                 MessageBox.Show(e.Message, "Błąd");
 
             }

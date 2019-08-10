@@ -8,12 +8,14 @@ using System.Windows.Media.Imaging;
 using SerwisInstaller.ActiveDirectory;
 using SerwisInstaller.Main;
 using SerwisInstaller.Logs;
-using SerwisInstaller.Policy;
+using SerwisInstaller.About;
 
 namespace SerwisInstaller.Configuration
 {
     internal class MenuParameters
     {
+        internal static MainWindow mainWindow = null;
+        internal static FAQWindow faqWindow = null;
         internal static LotusWindow lotusWindow = null;
         internal static OfficeWindow officeWindow = null;
         internal static UserMenu userWindow = null;

@@ -44,6 +44,63 @@ namespace SerwisInstaller
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
             install.InternetInstaller();
+            MessageBoxResult _userResult = MessageBox.Show("Czy chcesz utworzyć konto użytkownika na komputerze?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_userResult == MessageBoxResult.Yes)
+            {
+                UserMenu window3 = new UserMenu();
+                window3.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+            }
+            MessageBoxResult _policyResult = MessageBox.Show("Czy chcesz zainstalować polityke bezpieczeństwa KWP na komputerze? Tak aby dojebać Skwarczewską z Finansów??", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_policyResult == MessageBoxResult.Yes)
+            {
+                SecurityPolicy secpol = new SecurityPolicy();
+                secpol.ApplySecurityPolicy();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie instalowania polityki (kagańca :)).", "Uwaga");
+            }
+            MessageBoxResult _ipconfiglogResult = MessageBox.Show("Czy chcesz utworzyć Loga Ipconfig -all na komputerze, który zostanie zapisany w folderze programu/Logs/IPConfigLogs?","Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_ipconfiglogResult == MessageBoxResult.Yes)
+            {
+                IPConfigLogMenu window4 = new IPConfigLogMenu();
+                window4.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie tworzenia loga.", "Uwaga");
+            }
+            MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz Dołączyć do domeny? Wcisnij klawisz Tak, aby dołączyć, Klawisz Nie, aby zmienić nazwę NetBIOS komputera. Anuluj aby pominąć.", "Uwaga", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            if (_netbiosResult == MessageBoxResult.Yes)
+            {
+                NetbiosMenu window4 = new NetbiosMenu();
+                NetBIOSChange domain = new NetBIOSChange();
+                window4.ShowDialog();
+                domain.JoinDomain();
+            }
+            else if (_netbiosResult == MessageBoxResult.No)
+            {
+                NetbiosMenu window4 = new NetbiosMenu();
+                window4.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+            }
+            MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            if (_restartResult == MessageBoxResult.Yes)
+            {
+                Process.Start("shutdown /r /f/ t 0");
+                Close();
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void buttonPSTD_Click(object sender, RoutedEventArgs e)
@@ -51,6 +108,7 @@ namespace SerwisInstaller
             Installer install = new Installer();
             DriverInstaller driver = new DriverInstaller();
             AddCert cert = new AddCert();
+            install.ShitRemover();
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
             EKDWindow window2 = new EKDWindow(this);
@@ -67,6 +125,16 @@ namespace SerwisInstaller
             else
             {
                 MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+            }
+            MessageBoxResult _ipconfiglogResult = MessageBox.Show("Czy chcesz utworzyć Loga Ipconfig -all na komputerze, który zostanie zapisany w folderze programu/Logs/IPConfigLogs?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_ipconfiglogResult == MessageBoxResult.Yes)
+            {
+                IPConfigLogMenu window4 = new IPConfigLogMenu();
+                window4.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie tworzenia loga.", "Uwaga");
             }
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz zmienić nazwę NetBIOS komputera?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
@@ -91,7 +159,53 @@ namespace SerwisInstaller
         }
         private void buttonCWI_Click(object sender, RoutedEventArgs e)
         {
-            // this.buttonInternet_Click;
+            Installer install = new Installer();
+            AddCert cert = new AddCert();
+            install.ShitRemover();
+            LotusWindow window1 = new LotusWindow(this);
+            window1.ShowDialog();
+            install.CWIInstaller();
+            cert.InstallCWICert("CWI_CERT.cer");
+            MessageBoxResult _userResult = MessageBox.Show("Czy chcesz utworzyć konto użytkownika na komputerze?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_userResult == MessageBoxResult.Yes)
+            {
+                UserMenu window3 = new UserMenu();
+                window3.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+            }
+            MessageBoxResult _policyResult = MessageBox.Show("Czy chcesz zainstalować polityke bezpieczeństwa KWP na komputerze? Tak aby dojebać Skwarczewską z Finansów??", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_policyResult == MessageBoxResult.Yes)
+            {
+                SecurityPolicy secpol = new SecurityPolicy();
+                secpol.ApplySecurityPolicy();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie instalowania polityki (kagańca :)).", "Uwaga");
+            }
+            MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz zmienić nazwę NetBIOS komputera?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (_netbiosResult == MessageBoxResult.Yes)
+            {
+                NetbiosMenu window4 = new NetbiosMenu();
+                window4.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+            }
+            MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            if (_restartResult == MessageBoxResult.Yes)
+            {
+                Process.Start("shutdown /r /f/ t 0");
+                Close();
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void buttonFAQ_Click(object sender, RoutedEventArgs e)

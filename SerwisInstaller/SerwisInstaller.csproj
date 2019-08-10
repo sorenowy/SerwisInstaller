@@ -63,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="About\FAQWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ActiveDirectory\NetbiosMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +83,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="About\FAQWindow.xaml.cs">
+      <DependentUpon>FAQWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ActiveDirectory\CreateUserClass.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -103,7 +110,7 @@
     <Compile Include="Logs\IPConfigLogMenu.xaml.cs">
       <DependentUpon>IPConfigLogMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Logs\LogWrite.cs" />
+    <Compile Include="Logs\LogWriter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -116,7 +123,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Main\OknoOffice.xaml">
+    <Page Include="Main\OfficeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,8 +144,8 @@
     <Compile Include="Main\LotusWindow.xaml.cs">
       <DependentUpon>LotusWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Main\OknoOffice.xaml.cs">
-      <DependentUpon>OknoOffice.xaml</DependentUpon>
+    <Compile Include="Main\OfficeWindow.xaml.cs">
+      <DependentUpon>OfficeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Policy\SecurityPolicy.cs">
       <SubType>Component</SubType>
