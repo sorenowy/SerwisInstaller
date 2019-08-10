@@ -1,18 +1,18 @@
-﻿<Window x:Class="SerwisInstaller.Main.OknoLotus"
+﻿<Window x:Class="SerwisInstaller.Main.LotusWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SerwisInstaller.Main"
         mc:Ignorable="d"
-        Title="OknoLotus" Height="450" Width="293.088">
+        Title="Okno wyboru klienta poczty" Height="450" Width="293.088">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="198*"/>
             <ColumnDefinition Width="89*"/>
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" TextWrapping="Wrap" FontStyle="Oblique" FontWeight="DemiBold" Text="Wybierz z listy opcję klienta Lotus lub innego klienta poczty. Zatwierdź OK w celu instalacji lub Anuluj aby pominąć" VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2"/>
-        <ListBox x:Name="listaLotus" HorizontalAlignment="Left" Height="272" Margin="14,90,0,0" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2">
+        <ListBox x:Name="listLotus" HorizontalAlignment="Left" Height="272" Margin="14,90,0,0" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2">
             <ListBoxItem Content="Lotus Basic 8.5.1"/>
             <ListBoxItem Content="Lotus Standard 8.5.3"/>
             <ListBoxItem Content="Mozilla Firefox"/>

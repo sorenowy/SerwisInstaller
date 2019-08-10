@@ -17,14 +17,14 @@ namespace SerwisInstaller.Main
     /// <summary>
     /// Logika interakcji dla klasy OknoLotus.xaml
     /// </summary>
-    public partial class OknoLotus : Window
+    public partial class LotusWindow : Window
     {
         private MainWindow _window = null;
-        public OknoLotus()
+        public LotusWindow()
         {
             InitializeComponent();
         }
-        public OknoLotus(MainWindow mainwin)
+        public LotusWindow(MainWindow mainwin)
         {
             InitializeComponent();
             _window = mainwin;
@@ -32,14 +32,16 @@ namespace SerwisInstaller.Main
         private void buttonOKLotus_Click(object sender, RoutedEventArgs ea)
         {
             Installer install = new Installer();
-            install.InstallLotus(listaLotus.SelectedIndex);
-            OknoOffice okno1 = new OknoOffice(this);
-            okno1.ShowDialog();
+            install.LotusInstaller(listLotus.SelectedIndex);
+            OfficeWindow window1 = new OfficeWindow(this);
+            window1.ShowDialog();
+            this.Close();
         }
         private void buttonExitLotus_Click(object sender, RoutedEventArgs ea)
         {
-            OknoOffice okno1 = new OknoOffice(this);
-            okno1.ShowDialog();
+            OfficeWindow window1 = new OfficeWindow(this);
+            window1.ShowDialog();
+            this.Close();
         }
     }
 }

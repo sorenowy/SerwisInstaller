@@ -11,33 +11,33 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SerwisInstaller.Configuration;
 
 namespace SerwisInstaller.Main
 {
     /// <summary>
-    /// Logika interakcji dla klasy OknoOffice.xaml
+    /// Interaction logic for EKDWindow.xaml
     /// </summary>
-    public partial class OfficeWindow : Window
+    public partial class EKDWindow : Window
     {
-        private LotusWindow _lotuswindow = null;
-        public OfficeWindow()
+        private MainWindow _window = null;
+        public EKDWindow()
         {
             InitializeComponent();
         }
-        public OfficeWindow(LotusWindow window)
+        public EKDWindow(MainWindow window)
         {
             InitializeComponent();
-            _lotuswindow = window;
+            _window = window;
         }
 
-        private void buttonOfficeOK_Click(object sender, RoutedEventArgs e)
+        private void buttonOKEKD_Click(object sender, RoutedEventArgs e)
         {
             Installer install = new Installer();
-            install.OfficeInstaller(listOffice.SelectedIndex);
+            install.EKDAuthInstaller(listEKD.SelectedIndex);
             this.Close();
         }
-
-        private void buttonOfficeExit_Click(object sender, RoutedEventArgs e)
+        private void buttonExitEKD_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

@@ -34,9 +34,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,17 +64,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ActiveDirectory\CreateUserClass.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActiveDirectory\NetBIOSChange.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Configuration\LocalParameters.cs" />
     <Compile Include="Configuration\MenuParameters.cs" />
+    <Compile Include="Logs\IPConfigLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Main\OknoLotus.xaml">
+    <Page Include="Main\EKDWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Main\LotusWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -79,14 +97,26 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main\AddCert.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\DriverInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Main\EKDWindow.xaml.cs">
+      <DependentUpon>EKDWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Main\Installer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Main\OknoLotus.xaml.cs">
-      <DependentUpon>OknoLotus.xaml</DependentUpon>
+    <Compile Include="Main\LotusWindow.xaml.cs">
+      <DependentUpon>LotusWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Main\OknoOffice.xaml.cs">
       <DependentUpon>OknoOffice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Policy\SecurityPolicy.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -112,6 +142,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\IPConfigLogs\" />
+    <Folder Include="Logs\ProgramLogs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
