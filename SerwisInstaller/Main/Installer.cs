@@ -76,6 +76,8 @@ namespace SerwisInstaller.Main
         }
             public void BaseInstaller()
             {
+            try
+            {
                 this.StartInfo.FileName = "Firefox.exe";
                 this.Start();
                 Console.WriteLine("Instaluję Firefox 66.0...");
@@ -97,6 +99,11 @@ namespace SerwisInstaller.Main
                 Console.WriteLine("Trwa instalacja K-Lite Codec 15.04 Standard...");
                 this.WaitForExit();
                 Console.WriteLine("Zainstalowano K-Lite Codec 15.04 Standard.");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
             }
             public void InternetInstaller()
             {

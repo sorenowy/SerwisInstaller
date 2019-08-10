@@ -30,6 +30,7 @@ namespace SerwisInstaller.Logs
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Error");
+                _log.Close();
             }
         }
         public void CloseLog(string logMessage)
