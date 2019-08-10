@@ -19,14 +19,14 @@ namespace SerwisInstaller.Logs
                 Directory.CreateDirectory(LocalParameters.loggingPath);
             }
 
-            if (!File.Exists(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + ".txt"))
+            if (!File.Exists(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + "-" + Environment.MachineName + ".txt"))
             { 
-                File.Create(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + ".txt").Close();
+                File.Create(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + "-" + Environment.MachineName + ".txt").Close();
             }
 
             try
             {
-                using (var writer = File.AppendText(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + ".txt"))
+                using (var writer = File.AppendText(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + "-" + Environment.MachineName + ".txt"))
                 {
                     AppendLog(logMessage, writer);
                 }
