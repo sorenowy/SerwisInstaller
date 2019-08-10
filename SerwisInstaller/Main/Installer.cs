@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows;
 using SerwisInstaller.Configuration;
+using SerwisInstaller.Logs;
 
 namespace SerwisInstaller.Main
 {
@@ -37,45 +38,55 @@ namespace SerwisInstaller.Main
         }
         public void ShitRemover()
         {
+            LogWrite log = new LogWrite();
             Console.Clear();
             this.StartInfo.FileName = "PCDecrapifier.exe";
             this.Start();
             Console.WriteLine("Użyj programu PC Decrapifier aby usunąć niepotrzebne oprogramowanie z komputera.\nŚmieci i inne rzeczy.");
+            log.Logging("Zainstalowano shit remover");
+            log.CloseLog();
             this.WaitForExit();
         }
         public void LotusInstaller(int option)
         {
-            if (option == 0)
+            try
             {
-                this.StartInfo.FileName = "LotusNotesBasic853.exe";
-                this.Start();
-                Console.WriteLine("Trwa instalacja Klienta Lotus Notes 8.5.3 Basic...");
-                this.WaitForExit();
-                Console.WriteLine("Zainstalowano klienta Lotus Notes 8.5.3 Basic.");
+                if (option == 0)
+                {
+                    this.StartInfo.FileName = "LotusNotesBasic853.exe";
+                    this.Start();
+                    Console.WriteLine("Trwa instalacja Klienta Lotus Notes 8.5.3 Basic...");
+                    this.WaitForExit();
+                    Console.WriteLine("Zainstalowano klienta Lotus Notes 8.5.3 Basic.");
+                }
+                else if (option == 1)
+                {
+                    this.StartInfo.FileName = "LotusNotesStd853.exe";
+                    this.Start();
+                    Console.WriteLine("Trwa instalacja Klienta Lotus Notes 8.5.3 Standard...");
+                    this.WaitForExit();
+                    Console.WriteLine("Zainstalowano klienta Lotus Notes 8.5.3 Standard.");
+                }
+                else if (option == 2)
+                {
+                    this.StartInfo.FileName = "thunderbird.exe";
+                    this.Start();
+                    Console.WriteLine("Trwa instalacja Klienta Mozilla Thunderbird...");
+                    this.WaitForExit();
+                    Console.WriteLine("Zainstalowano klienta Mozilla Thunderbird.");
+                }
+                else
+                {
+                    Console.WriteLine("Nie wybrano żadnego lotusa.");
+                }
             }
-            else if (option == 1)
+            catch (Exception e)
             {
-                this.StartInfo.FileName = "LotusNotesStd853.exe";
-                this.Start();
-                Console.WriteLine("Trwa instalacja Klienta Lotus Notes 8.5.3 Standard...");
-                this.WaitForExit();
-                Console.WriteLine("Zainstalowano klienta Lotus Notes 8.5.3 Standard.");
-            }
-            else if (option == 2)
-            {
-                this.StartInfo.FileName = "thunderbird.exe";
-                this.Start();
-                Console.WriteLine("Trwa instalacja Klienta Mozilla Thunderbird...");
-                this.WaitForExit();
-                Console.WriteLine("Zainstalowano klienta Mozilla Thunderbird.");
-            }
-            else
-            {
-                Console.WriteLine("Nie wybrano żadnego lotusa.");
+                MessageBox.Show(e.ToString());
             }
         }
-            public void BaseInstaller()
-            {
+        public void BaseInstaller()
+        {
             try
             {
                 this.StartInfo.FileName = "Firefox.exe";
@@ -104,8 +115,10 @@ namespace SerwisInstaller.Main
             {
                 MessageBox.Show(e.ToString());
             }
-            }
-            public void InternetInstaller()
+        }
+        public void InternetInstaller()
+        {
+            try
             {
                 this.BaseInstaller();
                 this.StartInfo.FileName = "EsetKWP64.exe";
@@ -114,11 +127,25 @@ namespace SerwisInstaller.Main
                 this.WaitForExit();
                 Console.WriteLine("Zainstalowano Oprogramowanie antywirusowe ESET.");
             }
-            public void CWIInstaller()
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+        public void CWIInstaller()
+        {
+            try
             {
                 this.InternetInstaller();
             }
-            public void PSTDInstaller()
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+        public void PSTDInstaller()
+        {
+            try
             {
                 this.BaseInstaller();
                 this.StartInfo.FileName = "java765.exe";
@@ -134,7 +161,15 @@ namespace SerwisInstaller.Main
                 Console.WriteLine();
                 Console.WriteLine("----------------------------------------------------------");
             }
-            public void EKDAuthInstaller(int option)
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        public void EKDAuthInstaller(int option)
+        {
+            try
             {
                 if (option == 0)
                 {
@@ -164,6 +199,12 @@ namespace SerwisInstaller.Main
                     Console.WriteLine("Nie wybrano żadnego klienta EKD..Aplikacja przejdzie dalej.");
                 }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            
+        }
             public void OfficeInstaller(int option)
             {
                 Console.WriteLine("--------------------------------------------------");

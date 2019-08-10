@@ -11,10 +11,10 @@ namespace SerwisInstaller.Logs
 {
     public class LogWrite
     {
-        private StreamWriter _log = null;
+        private StreamWriter _log;
         public LogWrite()
         {
-            _log = new StreamWriter(LocalParameters.loggingPath, true);
+            _log = File.AppendText(LocalParameters.loggingPath);
             _log.Write("\r\nLog Entry : ");
             _log.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(),
                 DateTime.Now.ToLongDateString());
@@ -30,13 +30,15 @@ namespace SerwisInstaller.Logs
             catch (Exception e)
             {
                 MessageBox.Show(e.Message, "Error");
+                _log.WriteLine(e.Message);
                 _log.Close();
             }
         }
-        public void CloseLog(string logMessage)
+        public void CloseLog()
         {
             try
             {
+                _log.WriteLine("Log zakończony");
                 _log.Close();
             }
             catch (Exception e)

@@ -22,6 +22,6 @@ namespace SerwisInstaller.Configuration
         internal static string driverFinalPath = @"C:\Data\64";
         internal static string ipLogPath = Environment.CurrentDirectory + @"\Logs\IPConfigLogs\";
         internal static string inventoryNumber = string.Empty;
-        internal static string loggingPath = Environment.CurrentDirectory + DateTime.Today.ToString("MM-dd-yyyy") + "." + "txt";
+        internal static string loggingPath = Environment.CurrentDirectory +@"\Logs\ProgramLog\" + DateTime.Today.ToString("MM-dd-yyyy") + "." + "txt";
     }
 }

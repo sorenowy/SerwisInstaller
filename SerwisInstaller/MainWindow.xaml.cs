@@ -39,8 +39,8 @@ namespace SerwisInstaller
 
         private void buttonInternet_Click(object sender, RoutedEventArgs e)
         {
-            LogWrite log = new LogWrite();
             Installer install = new Installer();
+            install.ShitRemover();
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
             install.InternetInstaller();
