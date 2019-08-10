@@ -12,7 +12,7 @@ namespace SerwisInstaller.Logs
     public class IPConfigLog : Installer
     {
         private string _logPath; // Pobrane w metodzie zawartej w konstruktorze WPF
-        public int option; // Pobrane w metodzie zawartej w konstruktorze WPF
+        private int option =1; // Pobrane w metodzie zawartej w konstruktorze WPF
         public IPConfigLog()
         {
             this.StartInfo.Verb = "runas";

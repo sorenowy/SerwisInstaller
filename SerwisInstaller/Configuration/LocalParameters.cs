@@ -8,6 +8,7 @@ namespace SerwisInstaller.Configuration
 {
     internal class LocalParameters
     {
+
         internal static bool netconnection = false;
 
         internal static string netBIOSname = string.Empty;
@@ -21,5 +22,6 @@ namespace SerwisInstaller.Configuration
         internal static string driverFinalPath = @"C:\Data\64";
         internal static string ipLogPath = Environment.CurrentDirectory + @"\Logs\IPConfigLogs\";
         internal static string inventoryNumber = string.Empty;
+        internal static string loggingPath = Environment.CurrentDirectory + DateTime.Today.ToString("MM-dd-yyyy") + "." + "txt";
     }
 }

@@ -1,0 +1,16 @@
+﻿<Window x:Class="SerwisInstaller.Logs.IPConfigLogMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerwisInstaller.Logs"
+        mc:Ignorable="d"
+        Title="Wprowadź nazwę loga Ipconfig" Height="270.888" Width="341.118">
+    <Grid Margin="0,0,2,0">
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" FontWeight="DemiBold" FontStyle="Oblique" Text="Wprowadź nazwę numeru inwentarzowego komputera w celu stworzenia loga Ipconfig -all. Log zapisze się w scieżce programu /Logs/IPConfigLogs" VerticalAlignment="Top" Height="49" Width="305"/>
+        <Label Content="Nr inwentarzowy komputera" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="196"/>
+        <TextBox x:Name="textboxInventoryNumber" HorizontalAlignment="Left" Height="23" Margin="8,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="148"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" Width="129" Height="47" Click="buttonIPconfigOK_Click"/>
+
+    </Grid>
+</Window>

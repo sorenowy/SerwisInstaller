@@ -39,6 +39,7 @@ namespace SerwisInstaller
 
         private void buttonInternet_Click(object sender, RoutedEventArgs e)
         {
+            LogWrite log = new LogWrite();
             Installer install = new Installer();
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
@@ -50,7 +51,6 @@ namespace SerwisInstaller
             Installer install = new Installer();
             DriverInstaller driver = new DriverInstaller();
             AddCert cert = new AddCert();
-            NetBIOSChange netbios = new NetBIOSChange();
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
             EKDWindow window2 = new EKDWindow(this);
@@ -61,8 +61,8 @@ namespace SerwisInstaller
             MessageBoxResult _userResult = MessageBox.Show("Czy chcesz utworzyć konto użytkownika na komputerze?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(_userResult == MessageBoxResult.Yes)
             {
-                CreateUserClass user = new CreateUserClass();
-                user.ShowUser();
+                UserMenu window3 = new UserMenu();
+                window3.ShowDialog();
             }
             else
             {
@@ -71,7 +71,8 @@ namespace SerwisInstaller
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz zmienić nazwę NetBIOS komputera?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
             {
-                netbios.ChangeNetBIOS();
+                NetbiosMenu window4 = new NetbiosMenu();
+                window4.ShowDialog();
             }
             else
             {
