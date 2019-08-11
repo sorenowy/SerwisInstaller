@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SerwisInstaller.Configuration;
 
 namespace SerwisInstaller.Main
 {
@@ -19,7 +20,7 @@ namespace SerwisInstaller.Main
     /// </summary>
     public partial class OfficeWindow : Window
     {
-        private LotusWindow _lotuswindow = null;
+        private LotusWindow _lotuswindow = MenuParameters.lotusWindow;
         public OfficeWindow()
         {
             InitializeComponent();

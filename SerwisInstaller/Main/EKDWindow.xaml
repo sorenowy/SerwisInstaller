@@ -6,18 +6,45 @@
         xmlns:local="clr-namespace:SerwisInstaller.Main"
         mc:Ignorable="d"
         Title="Wybierz Program Autoryzacji EKD" Height="450" Width="292.27">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStopCollection>
+                <GradientStop Color="Blue" Offset="0"/>
+                <GradientStop Color="Silver" Offset="1"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="198*"/>
-            <ColumnDefinition Width="89*"/>
-        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="LightBlue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="DemiBold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Foreground" Value="DarkRed"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
         <TextBlock HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" TextWrapping="Wrap" FontStyle="Oblique" FontWeight="DemiBold" Text="Wybierz z listy opcję klienta autoryzacji EKD. Zatwierdź OK w celu instalacji lub Anuluj aby pominąć." VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2"/>
         <ListBox x:Name="listEKD" HorizontalAlignment="Left" Height="272" Margin="14,90,0,0" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2">
             <ListBoxItem Content="ENCARD 64-bit 4.1.0"/>
             <ListBoxItem Content="ENCARD 32-bit 2.1.0"/>
             <ListBoxItem Content="CryptoTech Crypto Suite 2.1"/>
         </ListBox>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="14,375,0,0" VerticalAlignment="Top" Width="120" Height="34" Click="buttonOKEKD_Click"/>
-        <Button Content="Anuluj" HorizontalAlignment="Left" Margin="139,375,0,0" VerticalAlignment="Top" Width="125" Height="34" Grid.ColumnSpan="2" Click="buttonExitEKD_Click"/>
+        <Button Content="OK" HorizontalAlignment="Left" Margin="14,375,0,0" VerticalAlignment="Top" Width="120" Height="34" Click="buttonOKEKD_Click" ToolTip="Zatwierdza instalację wybranego oprogramowania i kontynuuje."/>
+        <Button Content="Anuluj" HorizontalAlignment="Left" Margin="139,375,0,0" VerticalAlignment="Top" Width="125" Height="34" Grid.ColumnSpan="2" Click="buttonExitEKD_Click" ToolTip="Kontynuuje instalację bez klienta EKD."/>
     </Grid>
 </Window>

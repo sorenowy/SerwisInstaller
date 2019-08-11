@@ -18,6 +18,7 @@ using SerwisInstaller.ActiveDirectory;
 using SerwisInstaller.Logs;
 using SerwisInstaller.Policy;
 using SerwisInstaller.Configuration;
+using SerwisInstaller.About;
 
 namespace SerwisInstaller
 {
@@ -207,11 +208,15 @@ namespace SerwisInstaller
                 Close();
             }
         }
-
         private void buttonFAQ_Click(object sender, RoutedEventArgs e)
         {
-            // OknoFAQ okno1 = new OknoFAQ(this);
-            // okno1.ShowDialog();
+            FAQWindow window = new FAQWindow(this);
+            window.ShowDialog();
+        }
+        private void buttonHelp_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("mailto:" + LocalParameters.addressMail + "?subject=" + LocalParameters.helpSubject + "&body="
+                + "Data wystąpienia problemu: " + DateTime.Now);
         }
     }
 }

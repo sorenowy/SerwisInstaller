@@ -23,5 +23,7 @@ namespace SerwisInstaller.Configuration
         internal static string ipLogPath = Environment.CurrentDirectory + @"\Logs\IPConfigLogs\";
         internal static string inventoryNumber = string.Empty;
         internal static string loggingPath = Environment.CurrentDirectory +@"\Logs\ProgramLogs\";
+        internal static string addressMail = "hubert.kuszynski@go.policja.gov.pl";
+        internal static string helpSubject = "Problem z KWP Serwis Installer v1.0";
     }
 }

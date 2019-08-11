@@ -20,7 +20,7 @@ namespace SerwisInstaller.Main
     /// </summary>
     public partial class EKDWindow : Window
     {
-        private MainWindow _window = null;
+        private MainWindow _window = MenuParameters.mainWindow;
         public EKDWindow()
         {
             InitializeComponent();

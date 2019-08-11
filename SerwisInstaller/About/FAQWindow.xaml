@@ -6,9 +6,40 @@
         xmlns:local="clr-namespace:SerwisInstaller.About"
         mc:Ignorable="d"
         Title="FAQWindow" Height="450" Width="800">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStopCollection>
+                <GradientStop Color="Blue" Offset="0"/>
+                <GradientStop Color="Silver" Offset="1"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="42,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="325" Width="712"/>
-        <Button Content="Zamknij" HorizontalAlignment="Left" Margin="331,374,0,0" VerticalAlignment="Top" Width="118" Height="35" Click="buttonFAQExit_Click"/>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="LightBlue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="DemiBold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Foreground" Value="DarkRed"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <TextBlock HorizontalAlignment="Left" Margin="42,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="325" Width="712" Background="PapayaWhip"/>
+        <Button Content="Zamknij" HorizontalAlignment="Left" Margin="331,374,0,0" VerticalAlignment="Top" Width="118" Height="35" Click="buttonFAQExit_Click" ToolTip="Zamknij okno"/>
 
     </Grid>
 </Window>

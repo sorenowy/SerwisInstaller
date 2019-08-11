@@ -1,0 +1,20 @@
+
+11.08.2019 15:22:32 : System.ComponentModel.Win32Exception (0x80004005): Nie można odnaleźć określonego pliku
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.ShitRemover() w C:\Users\Dzik\Desktop\Projekt\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 44
+
+11.08.2019 16:41:30 : System.ComponentModel.Win32Exception (0x80004005): Nie można odnaleźć określonego pliku
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.ShitRemover() w C:\Users\Dzik\Desktop\Projekt\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 44
+
+11.08.2019 16:41:44 : System.ComponentModel.Win32Exception (0x80004005): Nie można odnaleźć określonego pliku
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.BaseInstaller() w C:\Users\Dzik\Desktop\Projekt\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 98
+
+11.08.2019 16:41:44 : System.ComponentModel.Win32Exception (0x80004005): Nie można odnaleźć określonego pliku
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.InternetInstaller() w C:\Users\Dzik\Desktop\Projekt\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 131

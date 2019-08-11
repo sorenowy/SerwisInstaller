@@ -6,11 +6,41 @@
         xmlns:local="clr-namespace:SerwisInstaller.ActiveDirectory"
         mc:Ignorable="d"
         Title="Zmiana nazwy NetBIOS" Height="266.447" Width="252.303">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStopCollection>
+                <GradientStop Color="Blue" Offset="0"/>
+                <GradientStop Color="Silver" Offset="1"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Wprowadź nową nazwę NetBIOS Komputera (nazwa sieciowa komputera) i zatwierdź przyciskiem OK" VerticalAlignment="Top" Height="75" Width="225"/>
-        <Label Content="Nazwa NetBIOS komputera" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="170"/>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="LightBlue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="DemiBold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Foreground" Value="DarkRed"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Foreground="BlanchedAlmond" Text="Wprowadź nową nazwę NetBIOS Komputera (nazwa sieciowa komputera) i zatwierdź przyciskiem OK" VerticalAlignment="Top" Height="75" Width="225"/>
+        <Label Content="Nazwa NetBIOS komputera" Foreground="BlanchedAlmond" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Width="170"/>
         <TextBox x:Name="textboxNetbios" HorizontalAlignment="Left" Height="23" Margin="10,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" Width="103" Height="47" Click="buttonNetbiosOK_Click"/>
-
+        <Button Content="OK" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" Width="103" Height="47" Click="buttonNetbiosOK_Click" ToolTip="Zmień nazwę komputera i lub dołącz do domeny, w zależności od poprzedniej opcji."/>
     </Grid>
 </Window>

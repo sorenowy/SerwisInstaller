@@ -17,10 +17,6 @@ namespace SerwisInstaller.Configuration
         internal static MainWindow mainWindow = null;
         internal static FAQWindow faqWindow = null;
         internal static LotusWindow lotusWindow = null;
-        internal static OfficeWindow officeWindow = null;
-        internal static UserMenu userWindow = null;
-        internal static NetbiosMenu netBIOSWindow = null;
-        internal static IPConfigLogMenu ipConfigLogWindow = null;
 
         internal static string iconPath = Environment.CurrentDirectory + @"\Images\icon.ico";
         internal static BitmapImage menuImage = new BitmapImage(new Uri(Environment.CurrentDirectory+@"\Images\image.jpg"));

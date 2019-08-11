@@ -6,10 +6,41 @@
         xmlns:local="clr-namespace:SerwisInstaller.Logs"
         mc:Ignorable="d"
         Title="Wprowadź nazwę loga Ipconfig" Height="270.888" Width="341.118">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStopCollection>
+                <GradientStop Color="Blue" Offset="0"/>
+                <GradientStop Color="Silver" Offset="1"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid Margin="0,0,2,0">
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" FontWeight="DemiBold" FontStyle="Oblique" Text="Wprowadź nazwę numeru inwentarzowego komputera w celu stworzenia loga Ipconfig -all. Log zapisze się w scieżce programu /Logs/IPConfigLogs" VerticalAlignment="Top" Height="49" Width="305"/>
-        <Label Content="Nr inwentarzowy komputera" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="196"/>
-        <TextBox x:Name="textboxInventoryNumber" HorizontalAlignment="Left" Height="23" Margin="8,111,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="148"/>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="LightBlue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="DemiBold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Foreground" Value="DarkRed"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" FontWeight="DemiBold" FontStyle="Oblique" Foreground="BlanchedAlmond" Text="Wprowadź nazwę numeru inwentarzowego komputera w celu stworzenia loga Ipconfig -all. Log zapisze się w scieżce programu /Logs/IPConfigLogs" VerticalAlignment="Top" Height="49" Width="305" ToolTip="Zatwierdza nazwę dla loga Ipconfig i zamyka okno."/>
+        <Label Content="Nr inwentarzowy komputera" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="196" Foreground="BlanchedAlmond"/>
+        <TextBox x:Name="textboxInventoryNumber" HorizontalAlignment="Left" Height="23" Margin="8,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148"/>
         <Button Content="OK" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top" Width="129" Height="47" Click="buttonIPconfigOK_Click"/>
 
     </Grid>

@@ -6,14 +6,45 @@
         xmlns:local="clr-namespace:SerwisInstaller.ActiveDirectory"
         mc:Ignorable="d"
         Title="Kreator Konta użytkownika" Height="373.026" Width="372.204">
+    <Window.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStopCollection>
+                <GradientStop Color="Blue" Offset="0"/>
+                <GradientStop Color="Silver" Offset="1"/>
+            </GradientStopCollection>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid x:Name="gridMenu">
-        <Button Content="Admin" HorizontalAlignment="Left" Margin="29,274,0,0" VerticalAlignment="Top" Width="142" Height="48" Click="buttonAdmin_Click"/>
-        <Button Content="User" HorizontalAlignment="Left" Margin="196,274,0,0" VerticalAlignment="Top" Width="142" Height="48" Click="buttonUser_Click"/>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="LightBlue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="DemiBold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Foreground" Value="DarkRed"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Button Content="Admin" HorizontalAlignment="Left" Margin="29,274,0,0" VerticalAlignment="Top" Width="142" Height="48" Click="buttonAdmin_Click" ToolTip="Utwórz konto administratora na komputerze"/>
+        <Button Content="User" HorizontalAlignment="Left" Margin="196,274,0,0" VerticalAlignment="Top" Width="142" Height="48" Click="buttonUser_Click" ToolTip="Utwórz konto użytkownika na komputerze"/>
         <TextBox x:Name="textboxUsername" HorizontalAlignment="Left" Height="23" Margin="29,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
-        <TextBox x:Name="textboxPassword" HorizontalAlignment="Left" Height="23" Margin="29,227,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="142"/>
-        <Label Content="Nazwa Użytkownika" HorizontalAlignment="Left" Margin="29,117,0,0" VerticalAlignment="Top" Width="142"/>
-        <Label Content="Hasło Użytkownika" HorizontalAlignment="Left" Margin="29,196,0,0" VerticalAlignment="Top" Width="142"/>
-        <TextBlock HorizontalAlignment="Left" Margin="29,10,0,0" TextWrapping="Wrap" Text="Wprowadź nazwę użytkownika i hasło, oraz wybierz rodzaj konta w celu utworzenia." FontWeight="DemiBold" FontSize="14" FontStyle="Oblique" VerticalAlignment="Top" Height="56" Width="309"/>
+        <TextBox x:Name="textboxPassword" HorizontalAlignment="Left" Height="23" Margin="29,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="142"/>
+        <Label Content="Nazwa Użytkownika" Foreground="BlanchedAlmond" HorizontalAlignment="Left" Margin="29,117,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label Content="Hasło Użytkownika" Foreground="BlanchedAlmond" HorizontalAlignment="Left" Margin="29,196,0,0" VerticalAlignment="Top" Width="142"/>
+        <TextBlock HorizontalAlignment="Left" Margin="29,10,0,0" Foreground="BlanchedAlmond" TextWrapping="Wrap" Text="Wprowadź nazwę użytkownika i hasło, oraz wybierz rodzaj konta w celu utworzenia." FontWeight="DemiBold" FontSize="14" FontStyle="Oblique" VerticalAlignment="Top" Height="56" Width="309"/>
 
     </Grid>
 </Window>

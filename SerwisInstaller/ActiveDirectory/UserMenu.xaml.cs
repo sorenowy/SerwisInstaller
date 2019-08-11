@@ -20,7 +20,7 @@ namespace SerwisInstaller.ActiveDirectory
     /// </summary>
     public partial class UserMenu : Window
     {
-        private MainWindow _window = null;
+        private MainWindow _window = MenuParameters.mainWindow;
         public UserMenu()
         {
             InitializeComponent();

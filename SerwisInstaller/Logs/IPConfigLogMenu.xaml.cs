@@ -20,7 +20,7 @@ namespace SerwisInstaller.Logs
     /// </summary>
     public partial class IPConfigLogMenu : Window
     {
-        private MainWindow _window = null;
+        private MainWindow _window = MenuParameters.mainWindow;
         public IPConfigLogMenu()
         {
             InitializeComponent();
