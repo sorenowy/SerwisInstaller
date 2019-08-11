@@ -32,15 +32,22 @@
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="Rockwell"/>
                 <Setter Property="FontSize" Value="30"/>
-                <Setter Property="Foreground" Value="Red"/>
                 <Setter Property="FontWeight" Value="DemiBold"/>
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="Turquoise" Offset="0"/>
+                            <GradientStop Color="AliceBlue" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
             </Style>
         </Grid.Resources>
-        <Button Content="Instaluj Internet" HorizontalAlignment="Left" Height="41" Margin="97,110,0,0" VerticalAlignment="Top" Width="129" Click="buttonInternet_Click"/>
-        <Button Content="Instaluj PSTD" HorizontalAlignment="Left" Height="41" Margin="97,196,0,0" VerticalAlignment="Top" Width="129" Click="buttonPSTD_Click"/>
-        <Button Content="Instaluj CWI" HorizontalAlignment="Left" Height="41" Margin="97,290,0,0" VerticalAlignment="Top" Width="129" Click="buttonCWI_Click"/>
-        <Button Content="F.A.Q" HorizontalAlignment="Left" Height="41" Margin="328,290,0,0" VerticalAlignment="Top" Width="129" Click="buttonFAQ_Click"/>
-        <Button Content="Wyjscie" Height="41" Margin="565,290,98,0" VerticalAlignment="Top" Click="buttonExit_Click"/>
+        <Button Content="Instaluj Internet" HorizontalAlignment="Left" Height="41" Margin="97,110,0,0" VerticalAlignment="Top" Width="129" Click="buttonInternet_Click" ToolTip="Instaluje pakiet oprogramowania dla komputera w sieci Internet."/>
+        <Button Content="Instaluj PSTD" HorizontalAlignment="Left" Height="41" Margin="97,196,0,0" VerticalAlignment="Top" Width="129" Click="buttonPSTD_Click" ToolTip="Instaluje pakiet oprogramowania dla komputera w sieci PSTD."/>
+        <Button Content="Instaluj CWI" HorizontalAlignment="Left" Height="41" Margin="97,290,0,0" VerticalAlignment="Top" Width="129" Click="buttonCWI_Click" ToolTip="Instaluje pakiet oprogramowania dla komputera w sieci CWI."/>
+        <Button Content="F.A.Q" HorizontalAlignment="Left" Height="41" Margin="328,290,0,0" VerticalAlignment="Top" Width="129" Click="buttonFAQ_Click" ToolTip="Wyświetla okno pomocy"/>
+        <Button Content="Wyjscie" Height="41" Margin="565,290,98,0" VerticalAlignment="Top" Click="buttonExit_Click" ToolTip="Zamyka program"/>
         <Image x:Name="imageMenu" HorizontalAlignment="Left" Height="155" Margin="294,105,0,0" VerticalAlignment="Top" Width="400" Stretch="Fill" RenderOptions.BitmapScalingMode="Fant"/>
         <Label Content="KWP GORZOW INSTALLER v1.0" HorizontalAlignment="Left" Margin="97,26,0,0" VerticalAlignment="Top" Height="79" Width="597" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
