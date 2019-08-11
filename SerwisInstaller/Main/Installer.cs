@@ -15,9 +15,6 @@ namespace SerwisInstaller.Main
         private string _dataPath;
         public Installer()
         {
-            this.StartInfo.UseShellExecute = true;
-            this.StartInfo.CreateNoWindow = false;
-            this.StartInfo.WorkingDirectory = @"C:\Data\";
         }
         public Installer(bool netconnection)
         {

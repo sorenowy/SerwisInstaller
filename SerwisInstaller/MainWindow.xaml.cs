@@ -31,8 +31,18 @@ namespace SerwisInstaller
         {
             InitializeComponent();
             imageMenu.Source = MenuParameters.menuImage;
+            MessageBox.Show("Witaj w aplikacji KWP Serwis Installer v1.0, Wybierz jedną z trzech opcji instalacji i wykonuj polecenia ukazane na ekranie. W przypadku chęci dołączenia do domeny, upewnij się że masz dostęp do serwera DHCP " +
+                "w sieci.", "Powitanie");
+            MessageBox.Show("Made by Hubert Kuszyński, Komenda Wojewódzka Policji w Gorzowie Wlkp., tel. 11659 / 608 355 925.", "Copyright");
+            MessageBoxResult _connectionResult = MessageBox.Show("Czy chcesz uruchomić program w trybie autonomicznym? (Offline Mode)", "Typ instalacji", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (_connectionResult == MessageBoxResult.Yes)
+            {
+                LocalParameters.netconnection = true;
+            }
+            else
+            {
+            }
         }
-
         private void buttonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -40,7 +50,7 @@ namespace SerwisInstaller
 
         private void buttonInternet_Click(object sender, RoutedEventArgs e)
         {
-            Installer install = new Installer();
+            Installer install = new Installer(LocalParameters.netconnection);
             install.ShitRemover();
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
@@ -106,7 +116,7 @@ namespace SerwisInstaller
 
         private void buttonPSTD_Click(object sender, RoutedEventArgs e)
         {
-            Installer install = new Installer();
+            Installer install = new Installer(LocalParameters.netconnection);
             DriverInstaller driver = new DriverInstaller();
             AddCert cert = new AddCert();
             install.ShitRemover();
@@ -160,7 +170,7 @@ namespace SerwisInstaller
         }
         private void buttonCWI_Click(object sender, RoutedEventArgs e)
         {
-            Installer install = new Installer();
+            Installer install = new Installer(LocalParameters.netconnection);
             AddCert cert = new AddCert();
             install.ShitRemover();
             LotusWindow window1 = new LotusWindow(this);
