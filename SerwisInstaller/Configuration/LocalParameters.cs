@@ -10,7 +10,7 @@ namespace SerwisInstaller.Configuration
     {
 
         internal static bool netconnection = false;
-
+        internal static string faqTextPath = Environment.CurrentDirectory + @"\About\FAQ.txt";
         internal static string netBIOSname = string.Empty;
         internal static string policyFinalDataPath = @"C:\Data\polityka";
         internal static string policyCertPath = Environment.CurrentDirectory + @"\Data\polityka";

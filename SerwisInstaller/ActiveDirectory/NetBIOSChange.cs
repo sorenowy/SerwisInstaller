@@ -52,6 +52,7 @@ namespace SerwisInstaller.ActiveDirectory
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }

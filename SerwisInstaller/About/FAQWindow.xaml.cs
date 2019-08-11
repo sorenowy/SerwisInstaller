@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 using SerwisInstaller.Configuration;
 
 namespace SerwisInstaller.About
@@ -28,6 +29,7 @@ namespace SerwisInstaller.About
         public FAQWindow(MainWindow window)
         {
             InitializeComponent();
+            textboxFAQ.Text = File.ReadAllText(LocalParameters.faqTextPath);
             _window = window;
         }
         private void buttonFAQExit_Click(object sender, RoutedEventArgs e)

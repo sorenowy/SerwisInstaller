@@ -46,7 +46,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }
@@ -85,7 +85,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }
@@ -117,7 +117,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }
@@ -134,7 +134,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }
@@ -160,7 +160,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }
@@ -202,7 +202,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
 
@@ -244,7 +244,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }

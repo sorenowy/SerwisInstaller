@@ -38,7 +38,7 @@ namespace SerwisInstaller.Logs
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("wystąpił błąd " + e.Message);
+                    MessageBox.Show("wystąpił błąd " + e.Message, "Błąd");
                     LogWriter.LogWrite(e.ToString());
                 }
             }

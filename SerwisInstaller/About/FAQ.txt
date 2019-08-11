@@ -1,0 +1,67 @@
+**************************************
+NAJCZÊŒCIEJ ZADAWANE PYTANIA        **
+**************************************
+P: Co to jest za program?
+
+O: SerwisInstaller jest oprogramowaniem maj¹cym na celu u³atwienie pracy serwisu lub u¿ytkownika koñcowego poprzez zautomatyzowanie instalacji 
+oraz czynnoœci serwisowych takich jak, tworzenie konta u¿ytkownika, instalowanie uporczliwych sterowników, generowanie logów ipconfig, 
+czy do³¹czanie do domeny. Wiele innych funkcji zostanie dodane wraz czasem :).
+
+P: Dlaczego program wa¿y a¿ 5-6GB??!
+
+O: SerwisInstaller, posiada repozytorium lokalne, w którym zosta³y zamieszczone wszystkie aplikacje instalowane przez pow³okê systemu Windows. 
+St¹d taka waga aplikacji. Sam program ma funkcjê pracy z u¿yciem repozytorium sieciowego - które zmniejsza potrzebê zasobu lokalnego
+do max 20MB. Jednak takie rozwi¹zanie wymusza na u¿ytkowniku korzystanie z obci¹¿onej sieci, niestety wymusza te¿ konieczne potwierdzanie 
+instalacji z zasobu sieciowego, co nie jest najwygodniejszym rozwi¹zaniem.
+
+P: Jakie s¹ wymagania do instalacji softu przez SerwisInstaller?
+
+O: SerwisInstaller wymaga systemu 64-bitowego aby siê uruchomiæ, oraz has³a administratora w celu prze³amania UAC systemu. Na 32-bitowym systemie
+program siê nie uruchomi..(To be continued..:)).
+
+P: Nie dzia³a! Nie dzia³a! Nie dzia³a!
+
+O: Spróbój uruchomiæ program ponownie, tak jak informuje Ciebie program, je¿eli to nie dzia³a, skontaktuj siê z administratorem poprzez funkcjê
+"Zg³oœ Problem" - i za³¹cz log programu z scie¿ki "Scie¿ka programu"/Logs/ProgramLogs.
+
+P: Oprogramowanie w bazie jest przestarza³e! Co zrobiæ?
+
+O: Zg³oœ problem administratorowi przez funkcjê programu i powiedz, co trzeba zrobiæ aby by³o git. :) :)
+
+*************************************
+CHANGELOG                          **
+*************************************
+v0.1
+Utworzenie projektu, wdro¿enie g³ównego zal¹¿ku programu. Segregacja klasy Installer - dodanie metody BaseInstaller();
+
+v0.2
+Dopracowanie obecnych metod i klas, stworzenie metod InstalujInternet()
+InstalujPSTD(), InstalujOffice(). Utworzenie klasy IPConfigAll wraz z metod¹ IPconfigAll() - zwracajaca plik tekstowy o nazwie nr. inw. komputera.
+
+v0.3
+Podpiêcie delegat do metod oraz poprawa wywo³ywania programu. Utworzenie event handlerów. Stworzenie klasy CreateUser -
+tworzacej konto "administratora" lub goœcia wraz z loginem i has³em dostêpowym do komputera.
+
+v0.4
+Dodanie kolejnych delegat oraz utworzenie nowej klasy ChangeNetBIOS - zmieniaj¹cej nazwê NetBIOS komputera. 
+(Klasa bêdzie klasa nadrzêdn¹ przysz³ej klasy ChangeDomain).
+
+v0.5
+Utworzenie manifestu programu. Który za zadanie ma usuniêcie UAC w celu przyspieszenia instalacji, nie ingeruj¹c w ustawienia bezpieczeñstwa PC.
+
+v0.6
+Utworzenie klasy SecurityPolicy - która ma za zadanie wykonanie polityki bezpieczeñstwa serwisu KWP.
+
+v0.7
+Utworzenie metody ChangeDomain() dziedziczacej z ChangeNetBIOS. Do³¹czaj¹c¹ komputer do domeny w danej sieci.
+
+v0.8
+Dodanie kodu programu uwzglêdniaj¹cego aplikacje okienkowe WindowsForms. Dodanie funkcji instalacji sterowników oraz certyfikatów bezpieczeñstwa
+potrzebnych do pracy w sieciach niejawnych lub s³u¿bowych.
+
+v0.9
+Uzupe³nienie Programu o wszystkie niezbêdne pozosta³e rzeczy, porz¹dkowanie kodu.
+
+v1.0
+Dodanie ikon, wyzwalaczy, przejœcie formy aplikacji na Windows Presentation Foundation, implementacja frontendu kodem XAML,
+dodanie funkcji generowania loga programu z wykonywanych funkcji w folderze \Logs\ProgramLogs

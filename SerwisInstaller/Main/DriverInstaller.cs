@@ -62,7 +62,7 @@ namespace SerwisInstaller.Main
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
             }
         }

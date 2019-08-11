@@ -38,7 +38,7 @@
                 </Style.Triggers>
             </Style>
         </Grid.Resources>
-        <TextBlock HorizontalAlignment="Left" Margin="42,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="325" Width="712" Background="PapayaWhip"/>
+        <TextBlock x:Name="textboxFAQ" HorizontalAlignment="Left" Margin="42,31,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="325" Width="712" Background="PapayaWhip"/>
         <Button Content="Zamknij" HorizontalAlignment="Left" Margin="331,374,0,0" VerticalAlignment="Top" Width="118" Height="35" Click="buttonFAQExit_Click" ToolTip="Zamknij okno"/>
 
     </Grid>
