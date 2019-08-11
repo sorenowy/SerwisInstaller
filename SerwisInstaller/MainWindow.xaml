@@ -28,6 +28,14 @@
                         </LinearGradientBrush>
                     </Setter.Value>
                 </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="FontWeight" Value="DemiBold"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="Foreground" Value="DarkRed"/>
+                        <Setter Property="BorderThickness" Value="3"/>
+                    </Trigger>
+                </Style.Triggers>
             </Style>
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="Rockwell"/>
