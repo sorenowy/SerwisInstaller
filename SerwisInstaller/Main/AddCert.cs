@@ -19,6 +19,18 @@ namespace SerwisInstaller.Main
             this._certCWIPath = LocalParameters.installationDataPath;
             this._certPSTDPath = LocalParameters.installationDataPath;
         }
+        public AddCert(bool netconnection) : this()
+        {
+            if (netconnection == false)
+            {
+                
+            }
+            else if (netconnection == true)
+            {
+                this._certCWIPath = LocalParameters.onlineInstallationDataPath;
+                this._certPSTDPath = LocalParameters.onlineInstallationDataPath;
+            }
+        }
         public void InstallCWICert(string filename)
         {
             try

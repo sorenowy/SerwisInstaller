@@ -58,6 +58,6 @@
         <Button Content="Wyjscie" Height="41" Margin="565,290,98,0" VerticalAlignment="Top" Click="buttonExit_Click" ToolTip="Zamyka program"/>
         <Image x:Name="imageMenu" HorizontalAlignment="Left" Height="155" Margin="294,105,0,0" VerticalAlignment="Top" Width="400" Stretch="Fill" RenderOptions.BitmapScalingMode="Fant"/>
         <Label Content="KWP GORZOW INSTALLER v1.0" HorizontalAlignment="Left" Margin="97,26,0,0" VerticalAlignment="Top" Height="79" Width="597" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Button Content="Zgłoś Problem" HorizontalAlignment="Left" Height="38" Margin="328,358,0,0" VerticalAlignment="Top" Width="129" Click="buttonHelp_Click"/>
+        <Button Content="Zgłoś Problem" HorizontalAlignment="Left" Height="38" Margin="328,358,0,0" VerticalAlignment="Top" Width="129" Click="buttonHelp_Click" ToolTip="Wyślij e-mail do programisty z logiem błędu w celu rozwiązania problemu."/>
     </Grid>
 </Window>

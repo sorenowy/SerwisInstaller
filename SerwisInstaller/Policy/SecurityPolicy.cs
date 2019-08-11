@@ -24,6 +24,23 @@ namespace SerwisInstaller.Policy
             this.StartInfo.RedirectStandardOutput = true;
             _policyPath = LocalParameters.policyCertPath;
         }
+        public SecurityPolicy(bool netconnection) :this()
+        {
+            if(netconnection == false)
+            {
+
+            }
+            else if (netconnection == true)
+            {
+                _finalPath = LocalParameters.policyFinalDataPath;
+                this.StartInfo.Verb = "runas";
+                this.StartInfo.UseShellExecute = false;
+                this.StartInfo.CreateNoWindow = false;
+                this.StartInfo.RedirectStandardInput = true;
+                this.StartInfo.RedirectStandardOutput = true;
+                _policyPath = LocalParameters.onlinePolicyCertPath;
+            }
+        }
         public void ApplySecurityPolicy()
         {
             try

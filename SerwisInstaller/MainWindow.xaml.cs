@@ -31,17 +31,9 @@ namespace SerwisInstaller
         {
             InitializeComponent();
             imageMenu.Source = MenuParameters.menuImage;
-            MessageBox.Show("Witaj w aplikacji KWP Serwis Installer v1.0, Wybierz jedną z trzech opcji instalacji i wykonuj polecenia ukazane na ekranie. W przypadku chęci dołączenia do domeny, upewnij się że masz dostęp do serwera DHCP " +
-                "w sieci.", "Powitanie");
-            MessageBox.Show("Made by Hubert Kuszyński, Komenda Wojewódzka Policji w Gorzowie Wlkp., tel. 11659 / 608 355 925.", "Copyright");
-            MessageBoxResult _connectionResult = MessageBox.Show("Czy chcesz uruchomić program w trybie autonomicznym? (Offline Mode)", "Typ instalacji", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (_connectionResult == MessageBoxResult.Yes)
-            {
-                LocalParameters.netconnection = true;
-            }
-            else
-            {
-            }
+            Information.Welcome();
+            Information.Copyright();
+            MenuParameters.InstallationConnectionSelect();
         }
         private void buttonExit_Click(object sender, RoutedEventArgs e)
         {
@@ -63,9 +55,9 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga",MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
-            MessageBoxResult _policyResult = MessageBox.Show("Czy chcesz zainstalować polityke bezpieczeństwa KWP na komputerze? Tak aby dojebać Skwarczewską z Finansów??", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult _policyResult = MessageBox.Show("Czy chcesz zainstalować polityke bezpieczeństwa KWP na komputerze??", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_policyResult == MessageBoxResult.Yes)
             {
                 SecurityPolicy secpol = new SecurityPolicy();
@@ -73,7 +65,7 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie instalowania polityki (kagańca :)).", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie instalowania polityki bezpieczeństwa KWP.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _ipconfiglogResult = MessageBox.Show("Czy chcesz utworzyć Loga Ipconfig -all na komputerze, który zostanie zapisany w folderze programu/Logs/IPConfigLogs?","Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_ipconfiglogResult == MessageBoxResult.Yes)
@@ -83,7 +75,7 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia loga.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia loga.", "Uwaga",MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz Dołączyć do domeny? Wcisnij klawisz Tak, aby dołączyć, Klawisz Nie, aby zmienić nazwę NetBIOS komputera. Anuluj aby pominąć.", "Uwaga", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
@@ -100,16 +92,18 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (_restartResult == MessageBoxResult.Yes)
             {
                 Process.Start("shutdown /r /f/ t 0");
+                Information.Thanks();
                 Close();
             }
             else
             {
+                Information.Thanks();
                 Close();
             }
         }
@@ -117,8 +111,8 @@ namespace SerwisInstaller
         private void buttonPSTD_Click(object sender, RoutedEventArgs e)
         {
             Installer install = new Installer(LocalParameters.netconnection);
-            DriverInstaller driver = new DriverInstaller();
-            AddCert cert = new AddCert();
+            DriverInstaller driver = new DriverInstaller(LocalParameters.netconnection);
+            AddCert cert = new AddCert(LocalParameters.netconnection);
             install.ShitRemover();
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
@@ -135,7 +129,7 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga",MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _ipconfiglogResult = MessageBox.Show("Czy chcesz utworzyć Loga Ipconfig -all na komputerze, który zostanie zapisany w folderze programu/Logs/IPConfigLogs?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_ipconfiglogResult == MessageBoxResult.Yes)
@@ -145,7 +139,7 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia loga.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia loga.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz zmienić nazwę NetBIOS komputera?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
@@ -155,23 +149,25 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (_restartResult == MessageBoxResult.Yes)
             {
                 Process.Start("shutdown /r /f/ t 0");
+                Information.Thanks();
                 Close();
             }
             else
             {
+                Information.Thanks();
                 Close();
             }
         }
         private void buttonCWI_Click(object sender, RoutedEventArgs e)
         {
             Installer install = new Installer(LocalParameters.netconnection);
-            AddCert cert = new AddCert();
+            AddCert cert = new AddCert(LocalParameters.netconnection);
             install.ShitRemover();
             LotusWindow window1 = new LotusWindow(this);
             window1.ShowDialog();
@@ -185,9 +181,9 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
-            MessageBoxResult _policyResult = MessageBox.Show("Czy chcesz zainstalować polityke bezpieczeństwa KWP na komputerze? Tak aby dojebać Skwarczewską z Finansów??", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult _policyResult = MessageBox.Show("Czy chcesz zainstalować polityke bezpieczeństwa KWP na komputerze??", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_policyResult == MessageBoxResult.Yes)
             {
                 SecurityPolicy secpol = new SecurityPolicy();
@@ -195,7 +191,7 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie instalowania polityki (kagańca :)).", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie instalowania polityki bezpieczeństwa KWP.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz zmienić nazwę NetBIOS komputera?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
@@ -205,16 +201,18 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga");
+                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (_restartResult == MessageBoxResult.Yes)
             {
                 Process.Start("shutdown /r /f/ t 0");
+                Information.Thanks();
                 Close();
             }
             else
             {
+                Information.Thanks();
                 Close();
             }
         }

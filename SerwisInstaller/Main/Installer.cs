@@ -29,7 +29,9 @@ namespace SerwisInstaller.Main
             {
                 this.StartInfo.UseShellExecute = true;
                 this.StartInfo.CreateNoWindow = false;
-                _dataPath = @"\\192.168.0.54\Serwis\KWPInstaller\Data\";
+                _dataPath = LocalParameters.onlineInstallationDataPath;
+                this.StartInfo.UserName = LocalParameters.onlineLoginName;
+                this.StartInfo.PasswordInClearText = LocalParameters.onlinePassword;
                 this.StartInfo.WorkingDirectory = _dataPath;
             }
         }

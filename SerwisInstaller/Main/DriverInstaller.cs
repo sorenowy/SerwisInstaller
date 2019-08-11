@@ -24,6 +24,23 @@ namespace SerwisInstaller.Main
             this.StartInfo.RedirectStandardOutput = true;
             _driverPath = LocalParameters.driverPath;
         }
+        public DriverInstaller(bool connection) : this()
+        {
+            if(connection == false)
+            {
+
+            }
+            if(connection == true)
+            {
+                _finalPath = LocalParameters.driverFinalPath;
+                this.StartInfo.Verb = "runas";
+                this.StartInfo.UseShellExecute = false;
+                this.StartInfo.CreateNoWindow = false;
+                this.StartInfo.RedirectStandardInput = true;
+                this.StartInfo.RedirectStandardOutput = true;
+                _driverPath = LocalParameters.onlineDriverPath;
+            }
+        }
         public void InstallDriver()
         {
             try

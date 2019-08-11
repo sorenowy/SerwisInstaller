@@ -86,6 +86,7 @@
     <Compile Include="About\FAQWindow.xaml.cs">
       <DependentUpon>FAQWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="About\Information.cs" />
     <Compile Include="ActiveDirectory\CreateUserClass.cs">
       <SubType>Component</SubType>
     </Compile>
