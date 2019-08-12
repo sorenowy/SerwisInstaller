@@ -16,12 +16,12 @@ namespace SerwisInstaller
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
+        { // inicjalizowanie obiektu i dodanie elementów i messageboxow do menu głównego.
             InitializeComponent();
             imageMenu.Source = MenuParameters.menuImage;
             Information.Welcome();
             Information.Copyright();
-            MenuParameters.InstallationConnectionSelect();
+            MenuParameters.InstallationConnectionSelect(); // wybór scieżki instalacji
         }
         private void buttonExit_Click(object sender, RoutedEventArgs e)
         {

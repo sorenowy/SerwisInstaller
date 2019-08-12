@@ -11,7 +11,7 @@ namespace SerwisInstaller.Logs
 
             if (!Directory.Exists(LocalParameters.loggingPath))
             {
-                Directory.CreateDirectory(LocalParameters.loggingPath);
+                Directory.CreateDirectory(LocalParameters.loggingPath); // jezeli nie ma sciezki to tworzy ją
             }
 
             if (!File.Exists(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + "-" + Environment.MachineName + ".txt"))
@@ -23,7 +23,7 @@ namespace SerwisInstaller.Logs
             {
                 using (var writer = File.AppendText(LocalParameters.loggingPath + DateTime.Now.ToShortDateString() + "-" + Environment.MachineName + ".txt"))
                 {
-                    AppendLog(logMessage, writer);
+                    AppendLog(logMessage, writer); // wypisuje do loga od nowej linijki :)
                 }
             }
             catch (Exception ex)

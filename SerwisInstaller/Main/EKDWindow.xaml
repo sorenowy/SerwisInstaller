@@ -38,7 +38,7 @@
                 </Style.Triggers>
             </Style>
         </Grid.Resources>
-        <TextBlock HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" TextWrapping="Wrap" FontStyle="Oblique" FontWeight="DemiBold" Text="Wybierz z listy opcję klienta autoryzacji EKD. Zatwierdź OK w celu instalacji lub Anuluj aby pominąć." VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" Foreground="BlanchedAlmond" TextWrapping="Wrap" FontStyle="Oblique" FontWeight="DemiBold" Text="Wybierz z listy opcję klienta autoryzacji EKD. Zatwierdź OK w celu instalacji lub Anuluj aby pominąć." VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2"/>
         <ListBox x:Name="listEKD" HorizontalAlignment="Left" Height="272" Margin="14,90,0,0" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2">
             <ListBoxItem Content="ENCARD 32-bit 2.1.0"/>
             <ListBoxItem Content="ENCARD 64-bit 4.1.0"/>
