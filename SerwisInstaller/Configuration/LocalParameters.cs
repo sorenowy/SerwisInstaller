@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SerwisInstaller.Configuration
 {
@@ -17,7 +13,7 @@ namespace SerwisInstaller.Configuration
         internal static string onlinePolicyCertPath = @"\\192.168.2.197\hubert\SerwisInstaller\Data\polityka";
         internal static string username = string.Empty;
         internal static string password = string.Empty;
-        internal static string onlineLoginName = "Hubert";
+        internal static string onlineLoginName = "hubert";
         internal static string onlinePassword = "11-Hubert-1111!";
         internal static string installationDataPath = Environment.CurrentDirectory + @"\Data\";
         internal static string onlineInstallationDataPath = @"\\192.168.2.197\hubert\SerwisInstaller\Data\";

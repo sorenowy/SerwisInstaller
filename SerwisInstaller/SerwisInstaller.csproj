@@ -41,6 +41,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>policja_lubuska_4lg_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -182,6 +185,9 @@
     <Folder Include="Images\" />
     <Folder Include="Logs\IPConfigLogs\" />
     <Folder Include="Logs\ProgramLogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="policja_lubuska_4lg_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

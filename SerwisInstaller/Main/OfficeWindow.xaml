@@ -38,12 +38,13 @@
                 </Style.Triggers>
             </Style>
         </Grid.Resources>
-        <TextBlock HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" TextWrapping="Wrap" FontStyle="Oblique" Foreground="BlanchedAlmond" FontWeight="DemiBold" Text="Wybierz z listy opcję klienta Lotus lub innego klienta poczty. Zatwierdź OK w celu instalacji lub Anuluj aby pominąć" VerticalAlignment="Top" Width="254"/>
+        <TextBlock HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" TextWrapping="Wrap" FontStyle="Oblique" Foreground="BlanchedAlmond" FontWeight="DemiBold" Text="Wybierz z listy opcję klienta Office lub innego oprogramowania biurowego. Zatwierdź OK w celu instalacji lub Anuluj aby pominąć" VerticalAlignment="Top" Width="254"/>
         <ListBox x:Name="listOffice" HorizontalAlignment="Left" Height="272" Margin="14,90,0,0" VerticalAlignment="Top" Width="250">
             <ListBoxItem Content="Open Office 4.1.6"/>
             <ListBoxItem Content="Office 2007 Enterprise CRC"/>
             <ListBoxItem Content="Office 2016 MOLP"/>
-            <ListBoxItem Content="Office 2019 MOLP (KGP)"/>
+            <ListBoxItem Content="Office 2019 STANDARD (KGP)"/>
+            <ListBoxItem Content="Office 2019 PROFESSIONAL (KGP)"/>
         </ListBox>
         <Button Content="OK" HorizontalAlignment="Left" Margin="14,375,0,0" VerticalAlignment="Top" Width="120" Height="34" Click="buttonOfficeOK_Click" ToolTip="Zatwierdza wybór oprogramowania i dokonuje instalacji."/>
         <Button Content="Anuluj" HorizontalAlignment="Left" Margin="139,375,0,0" VerticalAlignment="Top" Width="125" Height="34" Click="buttonOfficeExit_Click" ToolTip="Kontynuuje instalację."/>

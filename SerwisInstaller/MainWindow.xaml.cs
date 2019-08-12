@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Diagnostics;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using SerwisInstaller.Main;
 using SerwisInstaller.ActiveDirectory;
 using SerwisInstaller.Logs;
@@ -97,8 +85,8 @@ namespace SerwisInstaller
             MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (_restartResult == MessageBoxResult.Yes)
             {
-                Process.Start("shutdown /r /f/ t 0");
                 Information.Thanks();
+                Process.Start("shutdown /r /f/ t 0");
                 Close();
             }
             else
@@ -120,7 +108,7 @@ namespace SerwisInstaller
             window2.ShowDialog();
             install.PSTDInstaller();
             driver.InstallDriver();
-            cert.InstallInfrastrukturaCert("infrastruktura_2019.der");
+            cert.InstallInfrastrukturaCert("infrastruktura2019.der");
             MessageBoxResult _userResult = MessageBox.Show("Czy chcesz utworzyć konto użytkownika na komputerze?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(_userResult == MessageBoxResult.Yes)
             {
@@ -149,19 +137,19 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                MessageBox.Show("Wybrałeś opcję nie zmieniania nazwy.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (_restartResult == MessageBoxResult.Yes)
             {
-                Process.Start("shutdown /r /f/ t 0");
                 Information.Thanks();
+                Process.Start("shutdown /r /f/ t 0");
                 Close();
             }
             else
             {
                 Information.Thanks();
-                Close();
+                this.Close();
             }
         }
         private void buttonCWI_Click(object sender, RoutedEventArgs e)
@@ -201,19 +189,19 @@ namespace SerwisInstaller
             }
             else
             {
-                MessageBox.Show("Wybrałeś opcję nie tworzenia konta.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                MessageBox.Show("Wybrałeś opcję nie zmieniania nazwy.", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
             MessageBoxResult _restartResult = MessageBox.Show("Czy chcesz dokonać restartu komputera w celu zapisania zmian.", "Restart", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
             if (_restartResult == MessageBoxResult.Yes)
             {
-                Process.Start("shutdown /r /f/ t 0");
                 Information.Thanks();
-                Close();
+                Process.Start("shutdown /r /f/ t 0");
+                this.Close();
             }
             else
             {
                 Information.Thanks();
-                Close();
+                this.Close();
             }
         }
         private void buttonFAQ_Click(object sender, RoutedEventArgs e)

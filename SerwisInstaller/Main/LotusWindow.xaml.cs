@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using SerwisInstaller.Configuration;
 
 namespace SerwisInstaller.Main
@@ -32,7 +20,7 @@ namespace SerwisInstaller.Main
         }
         private void buttonOKLotus_Click(object sender, RoutedEventArgs ea)
         {
-            Installer install = new Installer();
+            Installer install = new Installer(LocalParameters.netconnection);
             install.LotusInstaller(listLotus.SelectedIndex);
             OfficeWindow window1 = new OfficeWindow(this);
             window1.ShowDialog();

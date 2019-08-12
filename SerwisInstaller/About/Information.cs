@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Configuration;
+﻿using System.Windows;
 
 namespace SerwisInstaller.About
 {
@@ -22,7 +16,7 @@ namespace SerwisInstaller.About
         }
         public static void Thanks()
         {
-            MessageBox.Show("Dziękuję za skorzystanie z KWP Serwis Installer v1.0. Do zobaczenia next time!", "Podziękowanie", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+            MessageBox.Show("Dziękuję za skorzystanie z KWP Serwis Installer v1.0. Do zobaczenia next time! c(*.*c)", "Podziękowanie", MessageBoxButton.OK, MessageBoxImage.Asterisk);
         }
     }
 }

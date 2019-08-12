@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Security.Cryptography.X509Certificates;
 using SerwisInstaller.Configuration;
@@ -42,6 +38,7 @@ namespace SerwisInstaller.Main
                 store.Add(certificateCWI); // dodaje ceryfikat
                 store.Close();
                 LogWriter.LogWrite("Certyfikat CWI_CERT dograny pomyślnie!");
+                MessageBox.Show("Certyfikat CWI_CERT dograny pomyślnie!","Sukces");
 
             }
             catch (Exception e)
@@ -61,6 +58,7 @@ namespace SerwisInstaller.Main
                 store.Add(certificatePSTD);
                 store.Close();
                 LogWriter.LogWrite("Certyfikat infrastruktura dodano pomyślnie!");
+                MessageBox.Show("Certyfikat infrastruktura2019 dograny pomyślnie!", "Sukces");
             }
             catch (Exception e)
             {

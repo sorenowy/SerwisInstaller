@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Windows;
 using SerwisInstaller.Configuration;
@@ -21,7 +17,7 @@ namespace SerwisInstaller.Main
             if (netconnection == false)
             {
                 this.StartInfo.UseShellExecute = true;
-                this.StartInfo.CreateNoWindow = false;
+                this.StartInfo.CreateNoWindow = true;
                 _dataPath = LocalParameters.installationDataPath;
                 this.StartInfo.WorkingDirectory = _dataPath;
             }
@@ -30,8 +26,8 @@ namespace SerwisInstaller.Main
                 this.StartInfo.UseShellExecute = true;
                 this.StartInfo.CreateNoWindow = false;
                 _dataPath = LocalParameters.onlineInstallationDataPath;
-                this.StartInfo.UserName = LocalParameters.onlineLoginName;
-                this.StartInfo.PasswordInClearText = LocalParameters.onlinePassword;
+                //this.StartInfo.UserName = LocalParameters.onlineLoginName;
+                //this.StartInfo.PasswordInClearText = LocalParameters.onlinePassword;
                 this.StartInfo.WorkingDirectory = _dataPath;
             }
         }
@@ -172,7 +168,7 @@ namespace SerwisInstaller.Main
                 if (option == 0)
                 {
                     this.StartInfo.FileName = "msiexec.exe";
-                    this.StartInfo.Arguments = string.Format("/i {0}", $@"{this.StartInfo.WorkingDirectory}Encard\setup.msi");
+                    this.StartInfo.Arguments = $@"/i {this.StartInfo.WorkingDirectory}" + @"Encard\setup.msi";
                     this.Start();
                     LogWriter.LogWrite("Instaluję Encard 2.1.0...");
                     this.WaitForExit();
@@ -183,7 +179,7 @@ namespace SerwisInstaller.Main
                     this.StartInfo.FileName = "msiexec.exe";
                     this.StartInfo.Arguments = string.Format("/i {0}", $@"{this.StartInfo.WorkingDirectory}encard64bit\encard.msi");
                     this.Start();
-                    Console.WriteLine("Instaluję Encard 4.1.6...");
+                    LogWriter.LogWrite("Instaluję Encard 4.1.0...");
                     this.WaitForExit();
                     LogWriter.LogWrite("Zainstalowano Encard 4.1.6");
                 }
@@ -234,6 +230,24 @@ namespace SerwisInstaller.Main
                     this.StartInfo.Arguments = string.Format("/adminfile {0}", $@"{this.StartInfo.WorkingDirectory}office2016\config.msp");
                     this.Start();
                     LogWriter.LogWrite("Instaluję Office 2016 MOLP...");
+                    this.WaitForExit();
+                    LogWriter.LogWrite("Zainstalowano");
+                }
+                else if (option == 3)
+                {
+                    this.StartInfo.FileName = @"office2019\ODT_Setup\setup.exe";
+                    this.StartInfo.Arguments = string.Format("/configure {0}", $@"{this.StartInfo.WorkingDirectory}office2019\ODT_Setup\Install_Config_x32_STD.xml");
+                    this.Start();
+                    LogWriter.LogWrite("Instaluję Office 2019 STANDARD KGP...");
+                    this.WaitForExit();
+                    LogWriter.LogWrite("Zainstalowano");
+                }
+                else if (option == 4)
+                {
+                    this.StartInfo.FileName = @"office2019\ODT_Setup\setup.exe";
+                    this.StartInfo.Arguments = string.Format("/configure {0}", $@"{this.StartInfo.WorkingDirectory}office2019\ODT_Setup\Install_Config_x32_PRO.xml");
+                    this.Start();
+                    LogWriter.LogWrite("Instaluję Office 2019 PROFESSIONAL KGP...");
                     this.WaitForExit();
                     LogWriter.LogWrite("Zainstalowano");
                 }

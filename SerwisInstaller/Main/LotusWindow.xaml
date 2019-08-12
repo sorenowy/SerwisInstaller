@@ -40,7 +40,7 @@
         </Grid.Resources>
         <TextBlock HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" TextWrapping="Wrap" FontStyle="Oblique" Foreground="BlanchedAlmond" FontWeight="DemiBold" Text="Wybierz z listy opcję klienta Lotus lub innego klienta poczty. Zatwierdź OK w celu instalacji lub Anuluj aby pominąć" VerticalAlignment="Top" Width="254" Grid.ColumnSpan="2"/>
         <ListBox x:Name="listLotus" HorizontalAlignment="Left" Height="272" Margin="14,90,0,0" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2">
-            <ListBoxItem Content="Lotus Basic 8.5.1"/>
+            <ListBoxItem Content="Lotus Basic 8.5.3"/>
             <ListBoxItem Content="Lotus Standard 8.5.3"/>
             <ListBoxItem Content="Mozilla Firefox"/>
         </ListBox>

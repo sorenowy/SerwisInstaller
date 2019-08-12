@@ -33,7 +33,7 @@ namespace SerwisInstaller.Main
 
         private void buttonOfficeOK_Click(object sender, RoutedEventArgs e)
         {
-            Installer install = new Installer();
+            Installer install = new Installer(LocalParameters.netconnection);
             install.OfficeInstaller(listOffice.SelectedIndex);
             this.Close();
         }

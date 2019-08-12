@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using SerwisInstaller.Logs;
 using System.IO;
@@ -64,6 +60,10 @@ namespace SerwisInstaller.Main
             {
                 MessageBox.Show(e.Message, "Błąd");
                 LogWriter.LogWrite(e.ToString());
+            }
+            finally
+            {
+                MessageBox.Show("Sterowniki czytnika EKD EZPU100 zainstalowano poprawnie!", "Uwaga");
             }
         }
     }

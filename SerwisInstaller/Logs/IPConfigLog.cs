@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Windows;
 using SerwisInstaller.Main;
@@ -40,6 +36,10 @@ namespace SerwisInstaller.Logs
                 {
                     MessageBox.Show("wystąpił błąd " + e.Message, "Błąd");
                     LogWriter.LogWrite(e.ToString());
+                }
+                finally
+                {
+                    MessageBox.Show($"Utworzono ipconfig Log o nazwie {LocalParameters.inventoryNumber} w lokacji {_logPath}", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
             }
             else
