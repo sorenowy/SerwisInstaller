@@ -32,14 +32,14 @@ namespace SerwisInstaller
         {
             Installer install = new Installer(LocalParameters.netconnection);
             install.ShitRemover();
-            LotusWindow window1 = new LotusWindow(this);
-            window1.ShowDialog();
+            LotusWindow lotusWindow = new LotusWindow(this);
+            lotusWindow.ShowDialog();
             install.InternetInstaller();
             MessageBoxResult _userResult = MessageBox.Show("Czy chcesz utworzyć konto użytkownika na komputerze?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_userResult == MessageBoxResult.Yes)
             {
-                UserMenu window3 = new UserMenu();
-                window3.ShowDialog();
+                UserMenu userWindow = new UserMenu();
+                userWindow.ShowDialog();
             }
             else
             {
@@ -58,8 +58,8 @@ namespace SerwisInstaller
             MessageBoxResult _ipconfiglogResult = MessageBox.Show("Czy chcesz utworzyć Loga Ipconfig -all na komputerze, który zostanie zapisany w folderze programu/Logs/IPConfigLogs?","Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_ipconfiglogResult == MessageBoxResult.Yes)
             {
-                IPConfigLogMenu window4 = new IPConfigLogMenu();
-                window4.ShowDialog();
+                IPConfigLogMenu iplogWindow = new IPConfigLogMenu();
+                iplogWindow.ShowDialog();
             }
             else
             {
@@ -68,15 +68,15 @@ namespace SerwisInstaller
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz Dołączyć do domeny? Wcisnij klawisz Tak, aby dołączyć, Klawisz Nie, aby zmienić nazwę NetBIOS komputera. Anuluj aby pominąć.", "Uwaga", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
             {
-                NetbiosMenu window4 = new NetbiosMenu();
+                NetbiosMenu netbiosWindow = new NetbiosMenu();
                 NetBIOSChange domain = new NetBIOSChange();
-                window4.ShowDialog();
+                netbiosWindow.ShowDialog();
                 domain.JoinDomain();
             }
             else if (_netbiosResult == MessageBoxResult.No)
             {
-                NetbiosMenu window4 = new NetbiosMenu();
-                window4.ShowDialog();
+                NetbiosMenu netbiosWindow = new NetbiosMenu();
+                netbiosWindow.ShowDialog();
             }
             else
             {
@@ -102,18 +102,18 @@ namespace SerwisInstaller
             DriverInstaller driver = new DriverInstaller(LocalParameters.netconnection);
             AddCert cert = new AddCert(LocalParameters.netconnection);
             install.ShitRemover();
-            LotusWindow window1 = new LotusWindow(this);
-            window1.ShowDialog();
-            EKDWindow window2 = new EKDWindow(this);
-            window2.ShowDialog();
+            LotusWindow lotusWindow = new LotusWindow(this);
+            lotusWindow.ShowDialog();
+            EKDWindow ekdWindow = new EKDWindow(this);
+            ekdWindow.ShowDialog();
             install.PSTDInstaller();
             driver.InstallDriver();
             cert.InstallInfrastrukturaCert("infrastruktura2019.der");
             MessageBoxResult _userResult = MessageBox.Show("Czy chcesz utworzyć konto użytkownika na komputerze?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if(_userResult == MessageBoxResult.Yes)
             {
-                UserMenu window3 = new UserMenu();
-                window3.ShowDialog();
+                UserMenu userWindow = new UserMenu();
+                userWindow.ShowDialog();
             }
             else
             {
@@ -122,8 +122,8 @@ namespace SerwisInstaller
             MessageBoxResult _ipconfiglogResult = MessageBox.Show("Czy chcesz utworzyć Loga Ipconfig -all na komputerze, który zostanie zapisany w folderze programu/Logs/IPConfigLogs?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_ipconfiglogResult == MessageBoxResult.Yes)
             {
-                IPConfigLogMenu window4 = new IPConfigLogMenu();
-                window4.ShowDialog();
+                IPConfigLogMenu iplogWindow = new IPConfigLogMenu();
+                iplogWindow.ShowDialog();
             }
             else
             {
@@ -132,8 +132,8 @@ namespace SerwisInstaller
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz zmienić nazwę NetBIOS komputera?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
             {
-                NetbiosMenu window4 = new NetbiosMenu();
-                window4.ShowDialog();
+                NetbiosMenu netbiosWindow = new NetbiosMenu();
+                netbiosWindow.ShowDialog();
             }
             else
             {
@@ -157,15 +157,15 @@ namespace SerwisInstaller
             Installer install = new Installer(LocalParameters.netconnection);
             AddCert cert = new AddCert(LocalParameters.netconnection);
             install.ShitRemover();
-            LotusWindow window1 = new LotusWindow(this);
-            window1.ShowDialog();
+            LotusWindow lotusWindow = new LotusWindow(this);
+            lotusWindow.ShowDialog();
             install.CWIInstaller();
             cert.InstallCWICert("CWI_CERT.cer");
             MessageBoxResult _userResult = MessageBox.Show("Czy chcesz utworzyć konto użytkownika na komputerze?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_userResult == MessageBoxResult.Yes)
             {
-                UserMenu window3 = new UserMenu();
-                window3.ShowDialog();
+                UserMenu userWindow = new UserMenu();
+                userWindow.ShowDialog();
             }
             else
             {
@@ -184,8 +184,8 @@ namespace SerwisInstaller
             MessageBoxResult _netbiosResult = MessageBox.Show("Czy chcesz zmienić nazwę NetBIOS komputera?", "Uwaga", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (_netbiosResult == MessageBoxResult.Yes)
             {
-                NetbiosMenu window4 = new NetbiosMenu();
-                window4.ShowDialog();
+                NetbiosMenu netbiosWindow = new NetbiosMenu();
+                netbiosWindow.ShowDialog();
             }
             else
             {
@@ -206,8 +206,8 @@ namespace SerwisInstaller
         }
         private void buttonFAQ_Click(object sender, RoutedEventArgs e)
         {
-            FAQWindow window = new FAQWindow(this);
-            window.ShowDialog();
+            FAQWindow faqWindow = new FAQWindow(this);
+            faqWindow.ShowDialog();
         }
         private void buttonHelp_Click(object sender, RoutedEventArgs e)
         {

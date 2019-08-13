@@ -22,8 +22,8 @@ namespace SerwisInstaller.Main
         {
             Installer install = new Installer(LocalParameters.netconnection);
             install.LotusInstaller(listLotus.SelectedIndex);
-            OfficeWindow window1 = new OfficeWindow(this);
-            window1.ShowDialog();
+            OfficeWindow officeWindow = new OfficeWindow(this);
+            officeWindow.ShowDialog();
             this.Close();
         }
         private void buttonExitLotus_Click(object sender, RoutedEventArgs ea)
