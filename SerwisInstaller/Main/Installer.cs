@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Windows;
 using SerwisInstaller.Configuration;
 using SerwisInstaller.Logs;
+using System.IO;
 
 namespace SerwisInstaller.Main
 {
@@ -127,6 +128,11 @@ namespace SerwisInstaller.Main
                 LogWriter.LogWrite("Trwa instalowanie Oprogramowania ESET AV version 8 64bit...");
                 this.WaitForExit();
                 LogWriter.LogWrite("Zainstalowano Oprogramowanie antywirusowe ESET.");
+                this.StartInfo.FileName = "PocztaSpecjalna.exe";
+                this.Start();
+                LogWriter.LogWrite("Trwa instalowanie Oprogramowania Poczty Specjalnej...");
+                this.WaitForExit();
+                LogWriter.LogWrite("Zainstalowano Oprogramowanie PocztaSpecjalna.");
             }
             catch (Exception e)
             {
@@ -137,6 +143,12 @@ namespace SerwisInstaller.Main
         public void CWIInstaller()
         {
             this.InternetInstaller();
+            if (Directory.Exists(@"C:/Program"))
+            {
+                File.Copy(this.StartInfo.WorkingDirectory + @"PSconfig\utill.txt", @"C:/Program");
+                File.Copy(this.StartInfo.WorkingDirectory + @"PSconfig\drugiplik.txt", @"C:/Program");
+            }
+            
         }
         public void PSTDInstaller()
         {

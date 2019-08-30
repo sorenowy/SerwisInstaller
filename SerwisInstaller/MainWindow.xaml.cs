@@ -86,7 +86,7 @@ namespace SerwisInstaller
             if (_restartResult == MessageBoxResult.Yes)
             {
                 Information.Thanks();
-                Process.Start("shutdown /r /f/ t 0");
+                Process.Start("shutdown /r /f/ /t 0");
                 Close();
             }
             else
@@ -143,7 +143,7 @@ namespace SerwisInstaller
             if (_restartResult == MessageBoxResult.Yes)
             {
                 Information.Thanks();
-                Process.Start("shutdown /r /f/ t 0");
+                Process.Start("shutdown /r /f/ /t 0");
                 Close();
             }
             else
@@ -195,7 +195,7 @@ namespace SerwisInstaller
             if (_restartResult == MessageBoxResult.Yes)
             {
                 Information.Thanks();
-                Process.Start("shutdown /r /f/ t 0");
+                Process.Start("shutdown /r /f/ /t 0");
                 this.Close();
             }
             else
