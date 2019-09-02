@@ -151,6 +151,7 @@
     <Compile Include="Main\OfficeWindow.xaml.cs">
       <DependentUpon>OfficeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Main\PostInstaller.cs" />
     <Compile Include="Policy\SecurityPolicy.cs">
       <SubType>Component</SubType>
     </Compile>

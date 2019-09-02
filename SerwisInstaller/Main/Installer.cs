@@ -128,10 +128,8 @@ namespace SerwisInstaller.Main
                 LogWriter.LogWrite("Trwa instalowanie Oprogramowania ESET AV version 8 64bit...");
                 this.WaitForExit();
                 LogWriter.LogWrite("Zainstalowano Oprogramowanie antywirusowe ESET.");
-                this.StartInfo.FileName = "PocztaSpecjalna.exe";
-                this.Start();
-                LogWriter.LogWrite("Trwa instalowanie Oprogramowania Poczty Specjalnej...");
-                this.WaitForExit();
+                LogWriter.LogWrite("Instaluję pocztę specjalną!");
+                PostInstaller.DirectoryCopy(this.StartInfo.WorkingDirectory + "Program", @"C:\Program", true);
                 LogWriter.LogWrite("Zainstalowano Oprogramowanie PocztaSpecjalna.");
             }
             catch (Exception e)
@@ -143,10 +141,10 @@ namespace SerwisInstaller.Main
         public void CWIInstaller()
         {
             this.InternetInstaller();
-            if (Directory.Exists(@"C:/Program"))
+            if (Directory.Exists(@"C:\Program"))
             {
-                File.Copy(this.StartInfo.WorkingDirectory + @"PSconfig\utill.txt", @"C:/Program");
-                File.Copy(this.StartInfo.WorkingDirectory + @"PSconfig\drugiplik.txt", @"C:/Program");
+                File.Copy(this.StartInfo.WorkingDirectory + @"utill_start.txt", @"C:\Program\Konfiguracja");
+                File.Copy(this.StartInfo.WorkingDirectory + @"utill_aktualizacja.txt", @"C:\Program\Konfiguracja");
             }
             
         }

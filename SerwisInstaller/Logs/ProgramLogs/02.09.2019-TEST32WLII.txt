@@ -1,0 +1,57 @@
+
+02.09.2019 13:06:53 : System.ComponentModel.Win32Exception (0x80004005): Operacja została anulowana przez użytkownika
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.ShitRemover() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 40
+
+02.09.2019 13:06:55 : Instaluję Firefox 66.0...
+
+02.09.2019 13:06:58 : Zainstalowano Firefox 66.0.
+
+02.09.2019 13:07:00 : System.ComponentModel.Win32Exception (0x80004005): Operacja została anulowana przez użytkownika
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.BaseInstaller() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 99
+
+02.09.2019 13:07:02 : System.ComponentModel.Win32Exception (0x80004005): Operacja została anulowana przez użytkownika
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.InternetInstaller() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 127
+
+02.09.2019 13:16:56 : System.ComponentModel.Win32Exception (0x80004005): Operacja została anulowana przez użytkownika
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.ShitRemover() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 40
+
+02.09.2019 13:16:58 : Instaluję Firefox 66.0...
+
+02.09.2019 13:17:00 : Zainstalowano Firefox 66.0.
+
+02.09.2019 13:17:02 : System.ComponentModel.Win32Exception (0x80004005): Operacja została anulowana przez użytkownika
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.BaseInstaller() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 99
+
+02.09.2019 13:17:03 : System.ComponentModel.Win32Exception (0x80004005): Operacja została anulowana przez użytkownika
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.InternetInstaller() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 127
+
+02.09.2019 13:17:40 : System.ComponentModel.Win32Exception (0x80004005): Nie można odnaleźć określonego pliku
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.ShitRemover() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 40
+
+02.09.2019 13:17:42 : Instaluję Firefox 66.0...
+
+02.09.2019 13:17:44 : Zainstalowano Firefox 66.0.
+
+02.09.2019 13:17:45 : System.ComponentModel.Win32Exception (0x80004005): Nie można odnaleźć określonego pliku
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.BaseInstaller() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 99
+
+02.09.2019 13:17:46 : System.ComponentModel.Win32Exception (0x80004005): Nie można odnaleźć określonego pliku
+   w System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   w System.Diagnostics.Process.Start()
+   w SerwisInstaller.Main.Installer.InternetInstaller() w C:\Users\Hubert Kuszyński\Desktop\Projekty\SerwisInstaller\SerwisInstaller\SerwisInstaller\Main\Installer.cs:wiersz 127
